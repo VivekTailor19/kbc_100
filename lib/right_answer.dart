@@ -14,17 +14,22 @@ class _Right_AnswerState extends State<Right_Answer> {
   @override
   Widget build(BuildContext context) {
 
-    dynamic op = ModalRoute.of(context)!.settings ;
+    int op = ModalRoute.of(context)!.settings.arguments as int;
 
     return Scaffold(backgroundColor: Colors.black,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset("assets/images/wining.png",height: 150,width: 150,fit: BoxFit.fill),
-          Text("Your Answer Is Correct",style: TextStyle(color: Color(0xffC78640),fontSize: 25),),
-          Text("You Won ${price[op]}",style: TextStyle(color: Colors.amberAccent,fontSize: 25),),
-          Container(height: 60, width: 120, child: Text("Next",style: TextStyle(color: Color(0xffD6D6D6),fontSize: 25),),)
-        ],
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset("assets/images/wining.png",height: 150,width: 150,fit: BoxFit.fill),
+            Text("Your Answer Is Correct",style: TextStyle(color: Color(0xffC78640),fontSize: 25),),
+            Text("You Won ${price[op]}",style: TextStyle(color: Colors.amberAccent,fontSize: 25),),
+            InkWell(onTap: (){
+              Navigator.pushNamed(context, "start");
+            },
+            child: Container(height: 60, width: 120, child: Text("Next",style: TextStyle(color: Color(0xffD6D6D6),fontSize: 25),),))
+          ],
+        ),
       ),
     );
   }

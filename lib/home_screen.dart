@@ -100,6 +100,7 @@ int count = 0;
 int press = 0;
 
 class _HomeScreenState extends State<HomeScreen> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -130,36 +131,12 @@ class _HomeScreenState extends State<HomeScreen> {
                               children: [
                                 InkWell(
                                     onTap: () {
-                                      setState(() {
-                                        if (i < que.length) {
-                                          userans.add("A");
-                                        }
-                                        if( userans[i] == answer[i] )
-                                        {
-                                          Navigator.pushNamed(context, "right", arguments: i);
-                                        }
-                                        if (i < que.length - 1) {
-                                          i++;
-                                        }
-                                        print(userans);
-
-                                      });
+                                      running("A");
                                     },
                                     child: optButton(optA[i])),
                                 InkWell(
                                     onTap: () {
-                                      setState(() {
-                                        if (i < que.length) {
-                                          userans.add("B");
-                                        }
-                                        if( userans[i] == answer[i] )
-                                        {
-                                          Navigator.pushNamed(context, "right", arguments: i);
-                                        }
-                                        if (i < que.length - 1) {
-                                          i++;
-                                        }
-                                      });
+                                      running("B");
                                     },
                                     child: optButton(optB[i])),
                               ],
@@ -172,36 +149,12 @@ class _HomeScreenState extends State<HomeScreen> {
                               children: [
                                 InkWell(
                                     onTap: () {
-                                      setState(() {
-                                        if (i < que.length) {
-                                          userans.add("C");
-                                        }
-                                        if( userans[i] == answer[i] )
-                                        {
-                                          Navigator.pushNamed(context, "right", arguments: i);
-                                        }
-                                        if (i < que.length - 1) {
-                                          i++;
-                                        }
-
-                                      });
+                                      running("C");
                                     },
                                     child: optButton(optC[i])),
                                 InkWell(
                                     onTap: () {
-                                      setState(() {
-                                        if (i < que.length) {
-                                          userans.add("D");
-                                        }
-                                        if( userans[i] == answer[i] )
-                                        {
-                                          Navigator.pushNamed(context, "right", arguments: i);
-                                        }
-                                        if (i < que.length - 1) {
-                                          i++;
-                                        }
-
-                                      });
+                                      running("D");
                                     },
                                     child: optButton(optD[i])),
                               ],
@@ -227,6 +180,33 @@ class _HomeScreenState extends State<HomeScreen> {
         style: TextStyle(fontSize: 20, color: Colors.blueAccent),
       ),
     );
+  }
+
+  void running(String opt)
+  {
+    setState(() {
+      if (i < que.length) {
+        userans.add(opt);
+      }
+      {
+        if (userans[i] == answer[i]) {
+          Navigator.pushNamed(context, "right", arguments: i);
+          print(
+              " i = $i    userans[i] = ${userans[i]}      answer[i] = ${answer[i]}");
+          if (i < que.length - 1) {
+            i++;
+          }
+        }
+        else
+        {
+          Navigator.pushNamed(context, "wrong");
+          i=0;
+        }
+      }
+
+      print(userans);
+
+    });
   }
 }
 
