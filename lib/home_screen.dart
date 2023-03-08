@@ -186,7 +186,7 @@ class _HomeScreenState extends State<HomeScreen> {
   {
     setState(() {
 
-      if (i < que.length) {
+      if (i < que.length) { //5
         userans.add(opt);
       }
       {
@@ -194,7 +194,7 @@ class _HomeScreenState extends State<HomeScreen> {
         {
             Navigator.pushNamed(context, "right", arguments: i);
             //print(" i = $i    userans[i] = ${userans[i]}      answer[i] = ${answer[i]}");
-            if (i < que.length - 1) {  i++;   }
+            if (i < que.length  -1 ) {  i++;   }
         }
         else
         {
