@@ -8,44 +8,227 @@ class HomeScreen extends StatefulWidget {
 }
 
 List color = [
-  "Colors.lightBlueAccent",
-  "Colors.pinkAccent",
-  "Colors.amberAccent",
-  "Colors.tealAccent",
-  "Colors.redAccent",
+  Colors.lightBlueAccent,
+  Colors.pinkAccent,
+  Colors.amberAccent,
+  Colors.tealAccent,
+  Colors.redAccent,
   Colors.lightGreenAccent,
   Colors.orangeAccent,
   Colors.deepOrangeAccent,
-  Colors.limeAccent
+  Colors.limeAccent,
+  Colors.white,
 ];
 
-List<String> que = [
-  '1. In the Film "OMG Oh My God" Kanji Bhai filed a case against whom for the damage of his shop due to an earthquake ? ',
-  '2. What is the new name of the Hyderabad franchise that would replace Decan Charges in IPL6 ? ',
-  '3. In India, under which Union Ministry does the \'Rajbhasha Vibhag\' function ? ',
-  '4. According to a proverb, which is said to be \'the mother of invention\' ? ',
-  '5. Which actress got married to Siddharth Roy Kapur in 2012 ? ',
-  '6. To whom did Ravindranath Tagore dedicate his book \'visva parichay\' written on science ',
-  '7. Which of these is a chemical element present in the periodic table ? ',
-  '8. Which of these is not a work of Kalidas ? ',
-  '9. According to the Devi, Bhagavata, from the tears of which god is the rudraksha tree believed to have been created ? ',
-  '10. Which of these names means \'gold-like\' ? ',
+List que = [
+  '1. The reign of which of the following reigns was known as golden age for Mathura school of art ?',
+  '2. What symbol represents birth of Gautama Buddha ?',
+  '3. According to Sri Lankan chronicle Mahavamasa, Mauryan Emperor Ashoka converted to Buddhism by ?',
+  '4. Which of the following subjects are dealt in by Kalpa Sutras ? ',
+  '5. Who overthrew Saka rulers from India ? ',
+  '6. Which the following rulers is known as the ‘Napoleon of India ? ',
+  '7. Who defeated the Saka king Rudrasimha III and annexed his kingdom ?',
+  '8. As per the Hindu Philosophy, what is the number of articles under the restraints and practices (Yamas and Niyamas) ?',
+  '9. Which among the following sites gives an evidence of maritime trade in harappan era ?',
+  '10. What was the profession of Karmara in Vedic age ? ',
 ];
+List optA = [
+  "[A] Indo-Greeks",
+  "[A] Bodh tree",
+  "[A] Moggaliputa Tissa",
+  "[A] Sacrifices",
+  "[A] Gautami putra Satakarni",
+  "[A] Samudragupta",
+  "[A] Ramagupta",
+  "[A] 5",
+  "[A] Mohen-jo dero",
+  "[A] Blacksmith",
+];
+List optB = [
+  "[B] Sakas",
+  "[B] Lotus",
+  "[B] Tivara",
+  "[B] Family ceremonies",
+  "[B] Kanishka",
+  "[B] Ashoka",
+  "[B] Chandragupta II",
+  "[B] 15",
+  "[B] Lothal",
+  "[B] Potter"
+];
+List optC = [
+  "[C] Kushanas",
+  "[C] Horse",
+  "[C] Karuvaki",
+  "[C] Varnas, Ashramas",
+  "[C] Rudraraman",
+  "[C] Chandragupta I",
+  "[C] Kumargupta I",
+  "[C] 20",
+  "[C] Kalibangan",
+  "[C] Ratha (Chariot ) Makers",
+];
+List optD = [
+  "[D] Gupta",
+  "[D] Wheel",
+  "[D] Nigrodha",
+  "[D] All of the above",
+  "[D] Demetrius",
+  "[D] Skandgupta",
+  "[D] Samudragupta",
+  "[D] 36",
+  "[D] Harappa",
+  "[D] Goldsmith",
+];
+List answer = [
+  "C",
+  "B",
+  "D",
+  "D",
+  "A",
+  "A",
+  "B",
+  "C",
+  "B",
+  "A",
+];
+
+List userans = [];
+
+int i = 0;
+int count = 0;
+int press = 0;
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(backgroundColor: Colors.black,
-      body: Column(
-        children: [
-          Expanded(child: Container(height: 250,color: Colors.lightBlueAccent)),
-          Expanded(child: Container(height: 250,color: Colors.black)),
-        ],
-      )
+    return Scaffold(
+        backgroundColor: Colors.black,
+        body: Center(
+          child: Column(
+            children: [
+              Expanded(
+                  child: Container(
+                  height: 250,
+                  color: color[i],
+                  alignment: Alignment.center,
+                  child: Text("${que[i]}",
+                      style: TextStyle(fontSize: 30),
+                      textAlign: TextAlign.center),
+                )),
+              Expanded(
+                  child: Container(
+                      height: 250,
+                      color: Colors.black,
+                      alignment: Alignment.center,
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                InkWell(
+                                    onTap: () {
+                                      setState(() {
+                                        if (i < que.length) {
+                                          userans.add("A");
+                                        }
+                                        if( userans[i] == answer[i] )
+                                        {
+                                          Navigator.pushNamed(context, "right", arguments: i);
+                                        }
+                                        if (i < que.length - 1) {
+                                          i++;
+                                        }
+                                        print(userans);
+
+                                      });
+                                    },
+                                    child: optButton(optA[i])),
+                                InkWell(
+                                    onTap: () {
+                                      setState(() {
+                                        if (i < que.length) {
+                                          userans.add("B");
+                                        }
+                                        if( userans[i] == answer[i] )
+                                        {
+                                          Navigator.pushNamed(context, "right", arguments: i);
+                                        }
+                                        if (i < que.length - 1) {
+                                          i++;
+                                        }
+                                      });
+                                    },
+                                    child: optButton(optB[i])),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                InkWell(
+                                    onTap: () {
+                                      setState(() {
+                                        if (i < que.length) {
+                                          userans.add("C");
+                                        }
+                                        if( userans[i] == answer[i] )
+                                        {
+                                          Navigator.pushNamed(context, "right", arguments: i);
+                                        }
+                                        if (i < que.length - 1) {
+                                          i++;
+                                        }
+
+                                      });
+                                    },
+                                    child: optButton(optC[i])),
+                                InkWell(
+                                    onTap: () {
+                                      setState(() {
+                                        if (i < que.length) {
+                                          userans.add("D");
+                                        }
+                                        if( userans[i] == answer[i] )
+                                        {
+                                          Navigator.pushNamed(context, "right", arguments: i);
+                                        }
+                                        if (i < que.length - 1) {
+                                          i++;
+                                        }
+
+                                      });
+                                    },
+                                    child: optButton(optD[i])),
+                              ],
+                            ),
+                          ),
+
+                        ],
+                      ))),
+            ],
+          ),
+        ));
+  }
+
+  Widget optButton(String data) {
+    return Container(
+      height: 60,
+      width: 150,
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+          color: Color(0xffCBE4DE), borderRadius: BorderRadius.circular(10)),
+      child: Text(
+        "$data",
+        style: TextStyle(fontSize: 20, color: Colors.blueAccent),
+      ),
     );
   }
 }
-
 
 /*
 
@@ -60,3 +243,40 @@ False to Result
 
 
 * */
+
+// Visibility(
+//   visible: userans.length == que.length,
+//   child: InkWell(
+//   onTap: (){
+//     setState(() {
+//       print("User answer ${userans}");
+//       print("Answer      ${answer}");
+//       for(int j = 0 ; j < answer.length ; j++)
+//       {
+//         if( userans[j] == answer[j] )
+//         {
+//           count++;
+//         }
+//       }
+//       press++;
+//       print("Count = = ${count}");
+//     });
+//
+//   },
+//     child: Container(
+//       height: 50,
+//       width: 200,
+//       color: Colors.deepPurple,
+//       alignment: Alignment.center,
+//       child: Text(
+//         "Result",
+//         style:
+//             TextStyle(fontSize: 30, color: Colors.white),
+//       ),
+//     ),
+//   ),
+// ),
+//
+// Visibility(
+//   visible: press>0 ? true :false,
+//     child: Text("${count} /10 ",style: TextStyle(fontSize: 20,color: Colors.red),)),
