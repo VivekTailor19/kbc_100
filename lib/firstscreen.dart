@@ -13,7 +13,7 @@ class _First_ScreenState extends State<First_Screen> {
     return Scaffold(
       body:Center(
         child: InkWell(onTap: (){
-          Navigator.pushNamed(context, "start");
+          Navigator.pushNamed(context, "start" );
         },
           child: Container(
             height: 60,

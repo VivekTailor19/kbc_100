@@ -185,17 +185,16 @@ class _HomeScreenState extends State<HomeScreen> {
   void running(String opt)
   {
     setState(() {
+
       if (i < que.length) {
         userans.add(opt);
       }
       {
-        if (userans[i] == answer[i]) {
-          Navigator.pushNamed(context, "right", arguments: i);
-          print(
-              " i = $i    userans[i] = ${userans[i]}      answer[i] = ${answer[i]}");
-          if (i < que.length - 1) {
-            i++;
-          }
+        if (userans[i] == answer[i])
+        {
+            Navigator.pushNamed(context, "right", arguments: i);
+            //print(" i = $i    userans[i] = ${userans[i]}      answer[i] = ${answer[i]}");
+            if (i < que.length - 1) {  i++;   }
         }
         else
         {
