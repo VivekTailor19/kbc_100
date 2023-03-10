@@ -31,7 +31,7 @@ class _Right_AnswerState extends State<Right_Answer> {
               padding: const EdgeInsets.symmetric(vertical: 15.0),
               child: InkWell(onTap: (){
                 print(op);
-                if(op <= 9)
+                if(op < 9)
                   {
                     Navigator.pushNamed(context, "start");
                   }

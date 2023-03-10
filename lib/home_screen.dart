@@ -160,6 +160,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               ],
                             ),
                           ),
+                          //RichText(text: TextSpan(children: ),),
+                          //Text.rich(TextSpan(children: [TextSpan(),]))
 
                         ],
                       ))),
@@ -193,18 +195,25 @@ class _HomeScreenState extends State<HomeScreen> {
         if (userans[i] == answer[i])
         {
             Navigator.pushNamed(context, "right", arguments: i);
-            //print(" i = $i    userans[i] = ${userans[i]}      answer[i] = ${answer[i]}");
-            if (i < que.length  -1 ) {  i++;   }
+            print(" i = $i    userans[i] = ${userans[i]}      answer[i] = ${answer[i]}");
+            if (i < que.length  -1 )
+            {
+              i++;
+            }
+            if(userans.length == 10)
+              {
+                i=0;
+                userans = [];
+              }
         }
         else
         {
           Navigator.pushNamed(context, "wrong");
           i=0;
+          userans = [];
         }
       }
-
       print(userans);
-
     });
   }
 }
