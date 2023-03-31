@@ -2,6 +2,7 @@
 
 KBC Application
 
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
@@ -17,12 +18,15 @@ samples, guidance on mobile development, and a full API reference.
 
 <p>
 
-<img src = "https://user-images.githubusercontent.com/119835214/224669547-5a454169-ff66-45d2-93b0-0f4744efffff.PNG" height = "60%" width = "40%">
-<img src = "https://user-images.githubusercontent.com/119835214/224669549-a0472ed6-6b34-433b-be64-7a66aa1fd577.PNG" height = "60%" width = "40%">
-<img src = "https://user-images.githubusercontent.com/119835214/224669554-6760b156-08d3-4fbc-8b41-39f1ba2d2cdf.PNG" height = "60%" width = "40%">
-<img src = "https://user-images.githubusercontent.com/119835214/224669518-e4e91606-047f-4db0-9457-fe54a6a9af44.PNG" height = "60%" width = "40%">
-<img src = "https://user-images.githubusercontent.com/119835214/224669528-ab494a95-0d74-41a5-a3e1-437158031e18.PNG" height = "60%" width = "40%">
-<img src = "https://user-images.githubusercontent.com/119835214/224669536-b6e8ff7b-b9db-4019-982e-967045ffdedc.PNG" height = "60%" width = "40%">
-<img src = "https://user-images.githubusercontent.com/119835214/224669542-24a5d608-5cb1-4a68-b7f4-d9a6937d7278.PNG" height = "60%" width = "40%">
+<img src = "https://user-images.githubusercontent.com/119835214/229089256-c973aefa-f336-47a8-9848-21f26564ee3f.png" height="60%" width="40%">
+<img src = "https://user-images.githubusercontent.com/119835214/229089262-da281590-5cf2-429c-95be-a54aee44b4a2.png" height="60%" width="40%">
+<img src = "https://user-images.githubusercontent.com/119835214/229089266-e6832e3b-9f2f-440c-9173-2d600733c26f.png.png" height="60%" width="40%">
+<img src = "https://user-images.githubusercontent.com/119835214/229089270-b7ec3cc2-e7d4-471c-8b12-0d47c8fca5ee.png" height="60%" width="40%">
+<img src = "https://user-images.githubusercontent.com/119835214/229089277-989ac162-b397-47e5-8373-3ad547074f1e.png" height="60%" width="40%">
+<img src = "https://user-images.githubusercontent.com/119835214/229089285-827c446e-bd3e-4c56-bc87-67197c2564a3.png" height="60%" width="40%">
+<img src = "https://user-images.githubusercontent.com/119835214/229089289-abaf45de-1355-459c-b4ba-3cb7a0b12ade.png" height="60%" width="40%">
+
+
+
 
 </p>
